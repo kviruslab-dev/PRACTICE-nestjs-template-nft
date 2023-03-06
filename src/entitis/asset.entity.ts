@@ -5,8 +5,8 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
 } from 'typeorm';
-@Entity('ch_user')
-export class UserData {
+@Entity('ch_asset')
+export class AssetData {
   @PrimaryGeneratedColumn()
   id!: number;
 
@@ -17,13 +17,8 @@ export class UserData {
   updatedAt: Date;
 
   @Column({ nullable: false, default: '' })
-  email!: string;
-
-  @Column({ nullable: false, default: '' })
   name!: string;
 
   @Column({ nullable: false, default: '' })
-  googleId!: string;
-  @Column({ nullable: false, default: '' })
-  address!: string;
+  dia!: string;
 }

@@ -13,13 +13,13 @@ export class UserService {
   ) { }
 
   async createUser(bodyDto: CreateUserDto) {
-    const { email, name, phone } = bodyDto;
+    const { email, name, googleId, address } = bodyDto;
 
     const member = await this.repo.findOneBy({email })
 
     if (!member) {
       const cdata = this.repo.create({
-        email, name, phone
+        email, name, googleId, address
       });
 
       await this.repo.save(cdata);

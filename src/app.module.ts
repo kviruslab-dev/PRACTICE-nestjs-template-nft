@@ -6,6 +6,7 @@ import { ormConfig } from '../orm.config';
 import { UserModule } from './crud/user/user.module';
 
 @Module({
+
   imports: [
     TypeOrmModule.forRootAsync({ useFactory: ormConfig }),
     UserModule,
