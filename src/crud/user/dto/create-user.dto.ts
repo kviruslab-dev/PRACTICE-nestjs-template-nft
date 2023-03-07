@@ -7,9 +7,6 @@ export class CreateUserDto {
   @IsString()
   name: string;
   @IsString()
-  googleId: string;
-  @Optional()
-  @IsString()
   address: string;
 }
 
@@ -18,8 +15,16 @@ export class CreateTestDto {
   title: string;
   @IsString()
   content: string;
-
 }
+
+export class CreateAssetDto {
+  @IsString()
+  address: string;
+  @IsString()
+  content: string[];
+}
+
+
 
 
 

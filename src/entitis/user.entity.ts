@@ -23,7 +23,5 @@ export class UserData {
   name!: string;
 
   @Column({ nullable: false, default: '' })
-  googleId!: string;
-  @Column({ nullable: false, default: '' })
-  address!: string;
+  address: string;
 }

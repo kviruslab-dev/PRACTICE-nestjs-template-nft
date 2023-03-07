@@ -17,8 +17,11 @@ export class AssetData {
   updatedAt: Date;
 
   @Column({ nullable: false, default: '' })
-  name!: string;
+  address!: string;
 
   @Column({ nullable: false, default: '' })
-  dia!: string;
+  name!: string;
+
+  @Column({ nullable: false, default: 0 })
+  dia!: number;
 }

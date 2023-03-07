@@ -1,5 +1,5 @@
 import { Body, Controller, Delete, Get, Param, Post, Query } from '@nestjs/common';
-import { CreateTestDto, CreateUserDto } from './dto/create-user.dto';
+import { CreateAssetDto, CreateTestDto, CreateUserDto } from './dto/create-user.dto';
 import { UserService } from './user.service';
 
 @Controller('user')
@@ -9,13 +9,23 @@ export class UserController {
 
   @Post('create')
   createUser(@Body() body: CreateUserDto) {
+    console.log(body.email, body.address);
     return this.userService.createUser(body);
   }
 
   @Post('test')
   createUserTest(@Body() body: CreateTestDto) {
-    console.log('test', body.title, body.content);
-    return {title:'tt', content:"this.userService.createUser(body);"}
+    return {message:'success'}
+  }
+
+  @Post('asset')
+  addAsset(@Body() body: CreateAssetDto) {
+    return this.userService.createAsset(body);
+  }
+
+  @Get(':email')
+  getAddress(@Param('email') add: string) {
+    return this.userService.getAddress(add);
   }
 
 }
